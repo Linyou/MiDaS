@@ -202,10 +202,11 @@ def _make_pretrained_efficientnet_lite3(use_pretrained, exportable=False, in_cha
     """Modified by Chris to add in_chan
     """
     efficientnet = torch.hub.load(
-        "rwightman/gen-efficientnet-pytorch",
+        "/home/ubuntu/.cache/torch/hub/rwightman_gen-efficientnet-pytorch_master",
         "tf_efficientnet_lite3",
         pretrained=use_pretrained,
-        exportable=exportable
+        exportable=exportable,
+        source="local"
     )
 
     if in_chan != 3:
