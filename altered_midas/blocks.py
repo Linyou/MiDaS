@@ -243,7 +243,7 @@ def _make_resnet_backbone(resnet):
 def _make_pretrained_resnext101_wsl(use_pretrained, in_chan=3):
     """Modified by Chris to take in_chan
     """
-    resnet = torch.hub.load("facebookresearch/WSL-Images", "resnext101_32x8d_wsl", source="local")
+    resnet = torch.hub.load("/home/ubuntu/.cache/torch/hub/facebookresearch_WSL-Images_main", "resnext101_32x8d_wsl", source="local")
     if in_chan != 3:
         resnet.conv1 = torch.nn.Conv2d(in_chan, 64, 7, 2, 3, bias=False)
     return _make_resnet_backbone(resnet)
